@@ -1,0 +1,16 @@
+<div class="app-container">
+  <h1>📒Note Taker✏️</h1>
+  <app-note-list
+    [notes]="notes"
+    (noteSelected)="editNote($event)"
+    (newNote)="createNote()"
+  ></app-note-list>
+  
+  <app-note-editor
+    *ngIf="isEditing"
+    [selectedNote]="currentNote"
+    (noteSaved)="saveNote($event)"
+    (editorClosed)="isEditing = false"  
+  ></app-note-editor>
+  
+</div>

@@ -1,0 +1,17 @@
+<div class="note-editor">
+  <h2>{{ selectedNote ? 'Edit Note' : 'Create Note' }}</h2>
+  <form>
+    <label>
+      Title:
+      <input type="text" [(ngModel)]="note.title" [ngModelOptions]="{standalone: true}" />
+    </label>
+    <label>
+      Content:
+      <textarea [(ngModel)]="note.content" [ngModelOptions]="{standalone: true}"></textarea>
+    </label>
+    <button type="button" (click)="saveNote()">Save</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </form>
+  
+</div>
+
